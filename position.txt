@@ -1,0 +1,41 @@
+positions = {
+            'Montag': {
+                'date': (300, 110),
+                'meal1': (30, 137),
+                'meal2': (30, 212),
+                'salad': (702, 157),
+                'dessert': (702, 235),
+                'image': (552, 77)  # Position für das Bild (x, y)
+            },
+            'Dienstag': {
+                'date': (300, 285),
+                'meal1': (30, 316),
+                'meal2': (30, 391),
+                'salad': (702, 335),
+                'dessert': (702, 410),
+                'image': (552, 255)  # Position für das Bild (x, y)
+            },
+            'Mittwoch': {
+                'date': (300, 466),
+                'meal1': (30, 500),
+                'meal2': (30, 575),
+                'salad': (702, 517),
+                'dessert': (702, 595),
+                'image': (552, 440)  # Position für das Bild (x, y)
+            },
+            'Donnerstag': {
+                'date': (300, 648),
+                'meal1': (30, 680),
+                'meal2': (30, 756),
+                'salad': (702, 699),
+                'dessert': (702, 777),
+                'image': (552, 620)  # Position für das Bild (x, y)
+            },
+            'Freitag': {
+                'date': (300, 837),
+                'meal1': (30, 871),
+                'meal2': (30, 944),
+                'salad': (702, 887),
+                'dessert': (702, 965),
+                'image': (552, 815)  # Position für das Bild (x, y)
+            }

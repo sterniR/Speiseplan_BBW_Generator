@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eintrag bearbeiten</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Eintrag bearbeiten</h1>
+    <form action="{{ url_for('edit', id=meal['id']) }}" method="POST">
+        <label for="day">Tag:</label>
+        <input type="text" id="day" name="day" value="{{ meal['day'] }}" required>
+        <label for="date">Datum:</label>
+        <input type="date" id="date" name="date" value="{{ meal['date'] }}" required>
+        <label for="meal1">Gericht 1:</label>
+        <input type="text" id="meal1" name="meal1" value="{{ meal['meal1'] }}" class="autocomplete" autocomplete="oon" required>
+        <label for="meal2">Gericht 2:</label>
+        <input type="text" id="meal2" name="meal2" value="{{ meal['meal2'] }}" class="autocomplete" autocomplete="oon" required>
+        <label for="salad">Salat:</label>
+        <input type="text" id="salad" name="salad" value="{{ meal['salad'] }}" class="autocomplete" autocomplete="oon" required>
+        <label for="dessert">Dessert:</label>
+        <input type="text" id="dessert" name="dessert" value="{{ meal['dessert'] }}" class="autocomplete" autocomplete="on" required>
+        <button type="submit">Speichern</button>
+    </form>
+</body>
+</html>

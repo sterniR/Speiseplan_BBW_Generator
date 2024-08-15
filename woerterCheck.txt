@@ -1,0 +1,26 @@
+ 
+def format_text(text, line_length):
+    """
+    Fügt Zeilenumbrüche in den Text ein, wenn die Zeilenlänge überschritten wird
+    und fügt einen Bindestrich am Ende eines Wortes hinzu, wenn es über die Zeile hinausgeht.
+    """
+    words = text.split()
+    formatted_text = ""
+    current_line = ""
+
+    for word in words:
+        if len(current_line) + len(word) + 1 > line_length:
+            if len(word) > line_length:  # Wenn das Wort selbst länger als die Zeilenlänge ist
+                part1 = word[:line_length-len(current_line)-1] + "-"
+                part2 = word[line_length-len(current_line)-1:]
+                current_line += part1
+                formatted_text += current_line + "\n"
+                current_line = part2
+            else:
+                formatted_text += current_line.strip() + "\n"
+                current_line = word + " "
+        else:
+            current_line += word + " "
+
+    formatted_text += current_line.strip()  # Füge den letzten Rest hinzu
+    return formatted_text

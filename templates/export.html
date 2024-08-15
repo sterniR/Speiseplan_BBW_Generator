@@ -1,0 +1,63 @@
+<!-- export.html -->
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speiseplan exportieren</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Speiseplan exportieren</h1>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+        {% for message in messages %}
+          <li style="color: red;">{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+    <form action="{{ url_for('export') }}" method="post">
+        <table>
+            <thead>
+                <tr>
+                    <th>Auswahl</th>
+                    <th>Wochentag</th>
+                    <th>Datum</th>
+                    <th>Gericht 1</th>
+                    <th>Gericht 2</th>
+                    <th>Salat</th>
+                    <th>Dessert</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for meal in meals %}
+                <tr>
+                    <td><input type="checkbox" name="meal_id" value="{{ meal[0] }}"></td>
+                    <td>{{ meal[1] }}</td>
+                    <td>{{ meal[2] }}</td>
+                    <td>{{ meal[3] }}</td>
+                    <td>{{ meal[4] }}</td>
+                    <td>{{ meal[5] }}</td>
+                    <td>{{ meal[6] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <h3>Vegetarischer Tag auswählen:</h3>
+        <label><input type="radio" name="vegetarian_day" value="Montag" required> Montag</label><br>
+        <label><input type="radio" name="vegetarian_day" value="Dienstag"> Dienstag</label><br>
+        <label><input type="radio" name="vegetarian_day" value="Mittwoch"> Mittwoch</label><br>
+        <label><input type="radio" name="vegetarian_day" value="Donnerstag"> Donnerstag</label><br>
+        <label><input type="radio" name="vegetarian_day" value="Freitag"> Freitag</label><br><br>
+
+        <button type="submit">PDF exportieren</button>
+    </form>
+
+    <a href="{{ url_for('index') }}">Zurück zur Übersicht</a>
+</body>
+</html>
