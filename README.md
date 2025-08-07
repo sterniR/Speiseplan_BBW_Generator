@@ -1,2 +1,2 @@
 # Speiseplan_BBW_Generator
-Eine Webseite zur erstellung eines Speiseplanes für die Mensa BBW Hamburg
+Eine Webseite, die dazu dient, einen Speiseplan für die Mensa des BBW Hamburg zu erstellen.
